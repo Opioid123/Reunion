@@ -1,0 +1,62 @@
+﻿<br />
+<form class="container hidden-sm-down" [formGroup]="form" (ngSubmit)="addPost(form.value)">
+    <div class="row justify-content-center align-items-center">
+        <div class="jumbotron bg-transparent text-center  w-75">
+            <h4 class="card-header">
+                Enter your story here
+            </h4>
+            <div class="card-block">
+                <input class="form-control" type="text" placeholder="Current Profession" formControlName="currentprofession" />
+                <div style="color:red" *ngIf="!form.controls['currentprofession'].valid && form.controls['currentprofession'].touched">This is required!</div>
+            </div>
+            <div class="card-block">
+                <input class="form-control" type="text" placeholder="Current Location" formControlName="currentlocation" />
+                <div style="color:red" *ngIf="!form.controls['currentlocation'].valid && form.controls['currentlocation'].touched">This is required!</div>
+            </div>
+            <div class="card-block">
+                <textarea rows="5" cols="100" class="form-control" placeholder="Your Story" formControlName="yourstory"></textarea>
+                <div style="color:red" *ngIf="!form.controls['yourstory'].valid && form.controls['yourstory'].touched">This is required!</div>
+            </div>
+            <div class="card-block">
+                <input class="form-control" type="submit" [disabled]="!((form.controls['currentprofession'].valid && form.controls['currentprofession'].dirty) &&
+                       (form.controls['currentlocation'].valid && form.controls['currentlocation'].dirty) &&
+                       (form.controls['yourstory'].valid && form.controls['yourstory'].dirty)  )"
+                       value="Next" style="font-weight:bold;font-size:larger" />
+
+            </div>
+        </div>
+    </div>
+</form>
+
+<form class="container hidden-sm-up" [formGroup]="form" (ngSubmit)="addPost(form.value)">
+    <div class="row justify-content-center align-items-center">
+        <div class="jumbotron bg-transparent text-center  w-100">
+            <h4 class="card-header">
+                Enter your story here
+            </h4>
+            <div class="card-block">
+                <input class="form-control" type="text" placeholder="Current Profession" formControlName="currentprofession" />
+                <div style="color:red" *ngIf="!form.controls['currentprofession'].valid && form.controls['currentprofession'].touched">This is required!</div>
+            </div>
+            <div class="card-block">
+                <input class="form-control" type="text" placeholder="Current Location" formControlName="currentlocation" />
+                <div style="color:red" *ngIf="!form.controls['currentlocation'].valid && form.controls['currentlocation'].touched">This is required!</div>
+            </div>
+            <div class="card-block">
+                <textarea rows="10" cols="100" class="form-control" placeholder="Your Story" formControlName="yourstory"></textarea>
+                <div style="color:red" *ngIf="!form.controls['yourstory'].valid && form.controls['yourstory'].touched">This is required!</div>
+            </div>
+            <div class="card-block">
+                <input class="form-control" type="submit" [disabled]="!((form.controls['currentprofession'].valid && form.controls['currentprofession'].dirty) &&
+                       (form.controls['currentlocation'].valid && form.controls['currentlocation'].dirty) &&
+                       (form.controls['yourstory'].valid && form.controls['yourstory'].dirty)  )"
+                       value="Next" style="font-weight:bold;font-size:larger" />
+                <button id="btnGoBack" class="btn " (click)="goBack()">Go Back</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+

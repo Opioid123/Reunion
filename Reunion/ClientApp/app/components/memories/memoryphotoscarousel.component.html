@@ -1,0 +1,36 @@
+﻿
+<div class="text-center" style="margin-top:5px">
+    <a routerLink="/memoryimageupload/jntu/1991">
+        <h4>Click to upload images</h4>
+    </a>
+    <div class="card-block text-center">
+        <button id="btnPrevious" class="btn " (click)="previous()">Previous</button>
+        <button id="btnNext" class="btn " (click)="next()">Next</button>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Each carousel needs a unique ID -->
+    <div id="carousel-id" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox" *ngFor="let imageId of memoryImageIdList">
+            <div *ngIf="imageId == imageidentifier" class="carousel-item active">
+                <div class="card-block">
+                    <figure>
+                        <img src="{{baseUrl}}api/Image/MemoryImage/{{imageId}}" alt="" class="card-img-bottom img-fluid float-left w-100">
+                    </figure>
+                </div>
+            </div>
+            <div *ngIf="imageId != imageidentifier" class="carousel-item">
+                <div class="card-block">
+                    <figure>
+                        <img src="{{baseUrl}}api/Image/MemoryImage/{{imageId}}" alt="" class="card-img-bottom img-fluid float-left w-100">
+                    </figure>
+                </div>
+            </div>
+        </div>
+        
+        <!-- /.text-center -->
+    </div>
+    <!-- /.carousel -->
+
+</div>

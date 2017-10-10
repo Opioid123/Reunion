@@ -1,0 +1,158 @@
+﻿<br />
+<form class="container hidden-sm-down" [formGroup] = "form" (ngSubmit) = "addPost(form.value)">
+    <div class="row justify-content-center align-items-center">
+        <div class="jumbotron bg-transparent text-center  w-50">
+            <h4 class="card-header">
+                Enter your info here
+            </h4>
+            <div class="card-block">
+                <input class="form-control" type="text" placeholder="First Name" formControlName="firstname" />
+                <div style="color:red" *ngIf="!form.controls['firstname'].valid && form.controls['firstname'].touched">This is required!</div>
+            </div>
+            <div class="card-block">
+                <input class="form-control" type="text" placeholder="Last Name" formControlName="lastname" />
+                <div style="color:red" *ngIf="!form.controls['lastname'].valid && form.controls['lastname'].touched">This is required!</div>
+            </div>
+            <div class="card-block">
+                <input class="form-control" type="text" placeholder="Middle Initial" formControlName="middleinitial" />
+            </div>
+            <div class="card-block">
+                <input class="form-control" type="text" placeholder="Roll Number" formControlName="rollnumber" />
+            </div>
+            <div class="card-block">
+                <input class="form-control" type="text" placeholder="Phone Number" formControlName="phonenumber" />
+                <div style="color:red" *ngIf="!form.controls['phonenumber'].valid && form.controls['phonenumber'].touched">This is required!</div>
+            </div>
+            <div class="card-block">
+                <select class="form-control" name="branch" formControlName="branch">
+                    <option [selected]="true">--Select branch--</option>
+                    <option value="Chemical">Chemical</option>
+                    <option value="Civil">Civil</option>
+                    <option value="Computer">Computer Science</option>
+                    <option value="Electrical">Electrical</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Mechanical">Mechanical</option>
+                </select>
+            </div>
+            <div style="color:red" *ngIf="!form.controls['branch'].errors.validOption && form.controls['branch'].dirty && form.controls['branch'].touched ">This is required!</div>
+            <div class="card-block">
+                <select class="form-control" name="yearjoined" formControlName="yearjoined">
+                    <option [selected]="true">--Select start year--</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="1985">1985</option>
+                    <option value="1986">1986</option>
+                    <option value="1987">1987</option>
+                    <option value="1988">1988</option>
+                    <option value="1989">1989</option>
+                    <option value="1990">1990</option>
+                    <option value="1991">1991</option>
+                    <option value="1992">1992</option>
+                    <option value="1993">1993</option>
+                    <option value="1994">1994</option>
+                    <option value="1995">1995</option>
+                    <option value="1996">1996</option>
+                    <option value="1997">1997</option>
+                    <option value="1998">1998</option>
+                    <option value="1999">1999</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                </select>
+            </div>
+            <div style="color:red" *ngIf="!form.controls['yearjoined'].errors.validOption && form.controls['yearjoined'].dirty && form.controls['yearjoined'].touched ">This is required!</div>
+            <div class="card-block">
+                <input class="form-control" type="submit"  [disabled] = "!((form.controls['firstname'].valid && form.controls['firstname'].dirty) &&
+                       (form.controls['lastname'].valid && form.controls['lastname'].dirty) &&
+                       (form.controls['phonenumber'].valid && form.controls['phonenumber'].dirty) &&
+                       (form.controls['branch'].errors.validOption && form.controls['branch'].dirty ) &&
+                       (form.controls['yearjoined'].errors.validOption && form.controls['yearjoined'].dirty  ))" 
+                       value="Submit"  style="font-weight:bold;font-size:larger"/>
+            </div>
+        </div>
+        </div>
+</form>
+<form class="container hidden-sm-up" [formGroup]="form" (ngSubmit)="addPost(form.value)">
+    <div class="row justify-content-center align-items-center">
+        <div class="jumbotron bg-transparent text-center  w-100">
+            <h4 class="card-header">
+                Enter your info here
+            </h4>
+            <div class="card-block">
+                <input class="form-control" type="text" placeholder="First Name" formControlName="firstname" />
+                <div style="color:red" *ngIf="!form.controls['firstname'].valid && form.controls['firstname'].touched">This is required!</div>
+            </div>
+            <div class="card-block">
+                <input class="form-control" type="text" placeholder="Last Name" formControlName="lastname" />
+                <div style="color:red" *ngIf="!form.controls['lastname'].valid && form.controls['lastname'].touched">This is required!</div>
+            </div>
+            <div class="card-block">
+                <input class="form-control" type="text" placeholder="Middle Initial" formControlName="middleinitial" />
+            </div>
+            <div class="card-block">
+                <input class="form-control" type="text" placeholder="Roll Number" formControlName="rollnumber" />
+            </div>
+            <div class="card-block">
+                <input class="form-control" type="text" placeholder="Phone Number" formControlName="phonenumber" />
+                <div style="color:red" *ngIf="!form.controls['phonenumber'].valid && form.controls['phonenumber'].touched">This is required!</div>
+            </div>
+            <div class="card-block">
+                <select class="form-control" name="branch" formControlName="branch">
+                    <option [selected]="true">--Select branch--</option>
+                    <option value="Chemical">Chemical</option>
+                    <option value="Civil">CIvil</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Electrical">Electrical</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Mechanical">Mechanical</option>
+                </select>
+            </div>
+            <div style="color:red" *ngIf="!form.controls['branch'].errors.validOption && form.controls['branch'].dirty && form.controls['branch'].touched ">This is required!</div>
+            <div class="card-block">
+                <select class="form-control" name="yearjoined" formControlName="yearjoined">
+                    <option [selected]="true">--Select start year--</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="1985">1985</option>
+                    <option value="1986">1986</option>
+                    <option value="1987">1987</option>
+                    <option value="1988">1988</option>
+                    <option value="1989">1989</option>
+                    <option value="1990">1990</option>
+                    <option value="1991">1991</option>
+                    <option value="1992">1992</option>
+                    <option value="1993">1993</option>
+                    <option value="1994">1994</option>
+                    <option value="1995">1995</option>
+                    <option value="1996">1996</option>
+                    <option value="1997">1997</option>
+                    <option value="1998">1998</option>
+                    <option value="1999">1999</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                </select>
+            </div>
+            <div style="color:red" *ngIf="!form.controls['yearjoined'].errors.validOption && form.controls['yearjoined'].dirty && form.controls['yearjoined'].touched ">This is required!</div>
+            <div class="card-block">
+                <input class="form-control" type="submit" [disabled]="!((form.controls['firstname'].valid && form.controls['firstname'].dirty) &&
+                       (form.controls['lastname'].valid && form.controls['lastname'].dirty) &&
+                       (form.controls['phonenumber'].valid && form.controls['phonenumber'].dirty) &&
+                       (form.controls['branch'].errors.validOption && form.controls['branch'].dirty ) &&
+                       (form.controls['yearjoined'].errors.validOption && form.controls['yearjoined'].dirty  ))"
+                       value="Submit" style="font-weight:bold;font-size:larger" />
+            </div>
+        </div>
+    </div>
+</form>
+

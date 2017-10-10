@@ -1,0 +1,22 @@
+﻿<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1>
+        {{title}}
+    </h1>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <app-file-upload type="memory"
+                         maxFiles="4"
+                         maxSize="2"
+                         fileExt="JPG, GIF, PNG"
+                         redirectUrl ="/memoryimagecarousel/jutu/1991"
+                         (imageId)="refreshImages($event)">
+        </app-file-upload>
+    </div>
+</div>
+<br>
+<img *ngIf="imgUrl != ''"
+     [src]="imgUrl"
+     class="img-thumbnail"
+     alt="">

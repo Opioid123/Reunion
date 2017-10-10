@@ -1,0 +1,7 @@
+.header-image {
+    background-image: url('./images/JNTU_Anantapur_Perspective.jpg');
+    background-position: top center;
+    background-size: cover;
+    height: 250px;
+}
+

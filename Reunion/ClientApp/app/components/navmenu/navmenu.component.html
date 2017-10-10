@@ -1,0 +1,34 @@
+<div class="container-fluid" style="height:auto">
+    <div class="row">
+        <div class="col-sm-12" style="background-color:#a7856b;">
+            <nav class="navbar navbar-inverse navbar-toggleable-sm" style="border-radius:0px;margin-bottom:40px;">
+                <button #menuButton  class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapseLinks" aria-controls="collapseLinks" aria-expanded="false" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon" ></span>
+                </button>
+                <!--<a href="#" class="navbar-brand">
+                <img class="img-fluid" src="./images/logo.jpg" alt="Logo"  style="display:inline-block;"/>
+                <img class="img-fluid" style="display: inline-block; width:100px" src="./images/reunion.jpg" alt="reunion" />
+            </a>-->
+
+                <div class="collapse navbar-collapse" id="collapseLinks" [class.show]="show" style="margin-bottom:-40px">
+                    <h2 class="navbar-text mr-5  text-white hidden-sm-down">Jawaharlal Nehru Technological University, Anantapur</h2>
+                    <h2 class="navbar-text mr-5  text-white hidden-sm-up">JNTU-ATP </h2>
+                    <div class="navbar-nav" style="font-size:x-large;">
+                        <a routerLink="/home/jntu/1991" *ngIf="isLogedIn" class="nav-item nav-link active" (click) = "logout();menuButton.click()">Logout</a>
+                        <a routerLink="/auth/jntu/1991" *ngIf="!isLogedIn" class="nav-item nav-link active" (click) = "menuButton.click()">Login</a>
+                        <a routerLink="/home/jntu/1991" class="nav-item nav-link" (click) = "menuButton.click()">Home</a>
+                        <a routerLink="/pictures/jntu/1991" class="nav-item nav-link "  (click) = "menuButton.click()">Pictures</a>
+                        <a routerLink="/directory/jntu/1991" class="nav-item nav-link " (click)="menuButton.click()">Directory</a>
+                        <!--<a class="nav-item nav-link" href="#">Mission</a>-->
+                        <a class="nav-item nav-link" href="#" (click) = "menuButton.click()">Register College</a>
+                        <a routerLink="/profile/jntu/1991" class="nav-item nav-link" href="#" (click) = "menuButton.click()">Register Student</a>
+                        <!--<a class="nav-item nav-link disabled" href="#">Comments</a>-->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<!--<p-menubar  class="" [model]="items"></p-menubar>-->
+<!--<p-steps [model]="items"></p-steps>-->
+

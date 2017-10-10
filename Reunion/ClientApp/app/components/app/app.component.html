@@ -1,0 +1,8 @@
+
+<topheader class="hidden-sm-down"></topheader>
+<nav-menu [isLogedIn] ="isLoggedIn" (authEvent) ="loginClicked(isLoggedIn)"></nav-menu>
+<div class='container-fluid'>
+    <div class="row justify-content-center" style="height:500px">
+        <router-outlet></router-outlet>
+    </div>
+</div>

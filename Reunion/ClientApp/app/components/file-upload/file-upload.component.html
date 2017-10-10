@@ -1,0 +1,26 @@
+<div class="jumbotron bg-transparent text-center">
+    <div *ngIf="user" class="card text-center">
+        <h4 class="card-header">
+            Upload image here
+        </h4>
+        <div class="card-block">
+            <a href="javascript:void(0)" (click)="fileInput.click()">
+                <h4>Click to select image file</h4>
+            </a>
+            <input #fileInput type="file" style="display:none" (change) = "onFileChange($event)">
+            
+        </div>
+        <div class="card-block">
+            <a *ngIf="redirectUrl != '' && fileLoaded" routerLink="{{redirectUrl}}">
+                <h4>Next</h4>
+            </a>
+            <a *ngIf="redirectUrl == '' && fileLoaded" routerLink="{{redirectUrl}}">
+                <h4>Click here to add your story</h4>
+            </a>
+        </div>
+        <!--<div>
+            <input id="fileName" type="text" placeholder="One word image file name" [(ngModel)]="fileNameValue" />
+            <button class="btn" (click)="addFile()">Add</button>
+        </div>-->
+    </div>
+</div>

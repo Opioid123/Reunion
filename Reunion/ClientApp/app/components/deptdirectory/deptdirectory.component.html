@@ -1,0 +1,271 @@
+<div class="container-fluid" style="height:auto">
+    <div class="row">
+        <div class="jumbotron bg-transparent text-center">
+            <div class="card text-center">
+                <h2 class="card-header">
+                    {{dept|uppercase}}
+                </h2>
+                <div class="card-block">
+                    <div class="text-center" style="margin-top:5px">
+                        <div class="card-block text-center">
+                            <button id="btnPrevious" class="btn " (click)="previous()">Previous</button>
+                            <button id="btnNext" class="btn " (click)="next()">Next</button>
+                        </div>
+                    </div>
+                    <div class="text-center" style="margin-top:-20px">
+                        <div class="card-block text-center">
+                            <button id="btnGoBack" class="btn " (click)="goBack()">Go Back</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-block " *ngIf = "dept == 'chemical'" style="margin-top:-50px">
+                    <div class="container">
+                        <!-- Each carousel needs a unique ID -->
+                        <div id="carousel-id" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox" *ngFor="let profile of personImageIdList">
+                                <div *ngIf="profile.imageId == imageidentifier" class="carousel-item active">
+                                    <div class="card-block">
+                                        <figure>
+                                            <h2 class="card-title">{{profile.firstName}} {{profile.lastName}}</h2>
+                                            <h5 class="card-subtitle">(Profession : {{profile.profession}})</h5>
+
+                                            <img class="card-img-bottom img-fluid float-left" src="{{baseUrl}}api/Image/PersonImage/{{profile.imageId}}" style="width:420px" />
+                                            <br />
+                                            <div>{{profile.story}}</div>
+
+                                        </figure>
+
+                                    </div>
+                                </div>
+                                <div *ngIf="profile.imageId != imageidentifier" class="carousel-item">
+                                    <div class="card-block">
+                                        <figure>
+                                            <h2 class="card-title">{{profile.firstName}} {{profile.lastName}}</h2>
+                                            <h5 class="card-subtitle">(Profession : {{profile.profession}})</h5>
+
+                                            <img class="card-img-bottom img-fluid float-left" src="{{baseUrl}}api/Image/PersonImage/{{profile.imageId}}" style="width:420px" />
+                                            <br />
+                                            <div>{{profile.story}}</div>
+
+                                        </figure>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- /.text-center -->
+                        </div>
+                        <!-- /.carousel -->
+
+                    </div>
+                </div>
+                <div class="card-block" *ngIf = "dept == 'civil'" style="margin-top:-50px">
+                    <div class="container">
+                        <!-- Each carousel needs a unique ID -->
+                        <div id="carousel-id" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox" *ngFor="let profile of personImageIdList">
+                                <div *ngIf="profile.imageId == imageidentifier" class="carousel-item active">
+                                    <div class="card-block">
+                                        <figure>
+                                            <h2 class="card-title">{{profile.firstName}} {{profile.lastName}}</h2>
+                                            <h5 class="card-subtitle">(Profession : {{profile.profession}})</h5>
+
+                                            <img class="card-img-bottom img-fluid float-left" src="{{baseUrl}}api/Image/PersonImage/{{profile.imageId}}" style="width:420px" />
+                                            <br />
+                                            <div style="margin-left:15px">{{profile.story}}</div>
+
+                                        </figure>
+
+                                    </div>
+                                </div>
+                                <div *ngIf="profile.imageId != imageidentifier" class="carousel-item">
+                                    <div class="card-block">
+                                        <figure>
+                                            <h2 class="card-title">{{profile.firstName}} {{profile.lastName}}</h2>
+                                            <h5 class="card-subtitle">(Profession : {{profile.profession}})</h5>
+
+                                            <img class="card-img-bottom img-fluid float-left" src="{{baseUrl}}api/Image/PersonImage/{{profile.imageId}}" style="width:420px" />
+                                            <br />
+                                            <div>{{profile.story}}</div>
+
+                                        </figure>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- /.text-center -->
+                        </div>
+                        <!-- /.carousel -->
+
+                    </div>
+                </div>
+                <div class="card-block" *ngIf = "dept == 'computer'" style="margin-top:-50px">
+                    <div class="container">
+                        <!-- Each carousel needs a unique ID -->
+                        <div id="carousel-id" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox" *ngFor="let profile of personImageIdList">
+                                <div *ngIf="profile.imageId == imageidentifier" class="carousel-item active">
+                                    <div class="card-block">
+                                        <figure>
+                                            <h2 class="card-title">{{profile.firstName}} {{profile.lastName}}</h2>
+                                            <h5 class="card-subtitle">(Profession : {{profile.profession}})</h5>
+
+                                            <img class="card-img-bottom img-fluid float-left" src="{{baseUrl}}api/Image/PersonImage/{{profile.imageId}}" style="width:420px" />
+                                            <br />
+                                            <div>{{profile.story}}</div>
+
+                                        </figure>
+
+                                    </div>
+                                </div>
+                                <div *ngIf="profile.imageId != imageidentifier" class="carousel-item">
+                                    <div class="card-block">
+                                        <figure>
+                                            <h2 class="card-title">{{profile.firstName}} {{profile.lastName}}</h2>
+                                            <h5 class="card-subtitle">(Profession : {{profile.profession}})</h5>
+
+                                            <img class="card-img-bottom img-fluid float-left" src="{{baseUrl}}api/Image/PersonImage/{{profile.imageId}}" style="width:420px" />
+                                            <br />
+                                            <div>{{profile.story}}</div>
+
+                                        </figure>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- /.text-center -->
+                        </div>
+                        <!-- /.carousel -->
+
+                    </div>
+                </div>
+                <div class="card-block" *ngIf = "dept == 'electrical'" style="margin-top:-50px">
+                    <div class="container">
+                        <!-- Each carousel needs a unique ID -->
+                        <div id="carousel-id" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox" *ngFor="let profile of personImageIdList">
+                                <div *ngIf="profile.imageId == imageidentifier" class="carousel-item active">
+                                    <div class="card-block">
+                                        <figure>
+                                            <h2 class="card-title">{{profile.firstName}} {{profile.lastName}}</h2>
+                                            <h5 class="card-subtitle">(Profession : {{profile.profession}})</h5>
+
+                                            <img class="card-img-bottom img-fluid float-left" src="{{baseUrl}}api/Image/PersonImage/{{profile.imageId}}" style="width:420px" />
+                                            <br />
+                                            <div>{{profile.story}}</div>
+
+                                        </figure>
+
+                                    </div>
+                                </div>
+                                <div *ngIf="profile.imageId != imageidentifier" class="carousel-item">
+                                    <div class="card-block">
+                                        <figure>
+                                            <h2 class="card-title">{{profile.firstName}} {{profile.lastName}}</h2>
+                                            <h5 class="card-subtitle">(Profession : {{profile.profession}})</h5>
+
+                                            <img class="card-img-bottom img-fluid float-left" src="{{baseUrl}}api/Image/PersonImage/{{profile.imageId}}" style="width:420px" />
+                                            <br />
+                                            <div>{{profile.story}}</div>
+
+                                        </figure>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- /.text-center -->
+                        </div>
+                        <!-- /.carousel -->
+
+                    </div>
+                </div>
+                <div class="card-block" *ngIf="dept == 'electronics'" style="margin-top:-50px">
+                    <div class="container">
+                        <!-- Each carousel needs a unique ID -->
+                        <div id="carousel-id" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox" *ngFor="let profile of personImageIdList">
+                                <div *ngIf="profile.imageId == imageidentifier" class="carousel-item active">
+                                    <div class="card-block">
+                                        <figure>
+                                            <h2 class="card-title">{{profile.firstName}} {{profile.lastName}}</h2>
+                                            <h5 class="card-subtitle">(Profession : {{profile.profession}})</h5>
+
+                                            <img class="card-img-bottom img-fluid float-left" src="{{baseUrl}}api/Image/PersonImage/{{profile.imageId}}" style="width:420px" />
+                                            <br />
+                                            <div>{{profile.story}}</div>
+
+                                        </figure>
+
+                                    </div>
+                                </div>
+                                <div *ngIf="profile.imageId != imageidentifier" class="carousel-item">
+                                    <div class="card-block">
+                                        <figure>
+                                            <h2 class="card-title">{{profile.firstName}} {{profile.lastName}}</h2>
+                                            <h5 class="card-subtitle">(Profession : {{profile.profession}})</h5>
+
+                                            <img class="card-img-bottom img-fluid float-left" src="{{baseUrl}}api/Image/PersonImage/{{profile.imageId}}" style="width:420px" />
+                                            <br />
+                                            <div>{{profile.story}}</div>
+
+                                        </figure>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- /.text-center -->
+                        </div>
+                        <!-- /.carousel -->
+
+                    </div>
+                </div>
+                <div class="card-block" *ngIf="dept == 'mechanical'" style="margin-top:-50px">
+                    <div class="container">
+                        <!-- Each carousel needs a unique ID -->
+                        <div id="carousel-id" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox" *ngFor="let profile of personImageIdList">
+                                <div *ngIf="profile.imageId == imageidentifier" class="carousel-item active">
+                                    <div class="card-block">
+                                        <figure>
+                                            <h2 class="card-title">{{profile.firstName}} {{profile.lastName}}</h2>
+                                            <h5 class="card-subtitle">(Profession : {{profile.profession}})</h5>
+
+                                            <img class="card-img-bottom img-fluid float-left" src="{{baseUrl}}api/Image/PersonImage/{{profile.imageId}}" style="width:420px" />
+                                            <br />
+                                            <div>{{profile.story}}</div>
+
+                                        </figure>
+
+                                    </div>
+                                </div>
+                                <div *ngIf="profile.imageId != imageidentifier" class="carousel-item">
+                                    <div class="card-block">
+                                        <figure>
+                                            <h2 class="card-title">{{profile.firstName}} {{profile.lastName}}</h2>
+                                            <h5 class="card-subtitle">(Profession : {{profile.profession}})</h5>
+
+                                            <img class="card-img-bottom img-fluid float-left" src="{{baseUrl}}api/Image/PersonImage/{{profile.imageId}}" style="width:420px" />
+                                            <br />
+                                            <div>{{profile.story}}</div>
+
+                                        </figure>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- /.text-center -->
+                        </div>
+                        <!-- /.carousel -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
